@@ -8,5 +8,3 @@ Quickly create a professional README for a new project.
 
 License - select from dropdown
 *Contributing (see link-[Contributor Covenant](https://www.contributor-covenant.org/)
-*Tests-mockdaata?
-Questions-(provide contact info) github username add link to profile, email-with instructions on how to reach me with additional questions

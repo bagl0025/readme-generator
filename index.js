@@ -33,26 +33,15 @@ const questions = [
         }
     },
     {
-        type: 'checkbox',
-        name: 'toc',
-        message: 'Which sections would you like to include in the Tabel of Contents? (Check all that apply)',
-        choices: ['Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions']  
-    },
-    {
-        type: 'confirm',
-        name: 'confirmInstall',
-        message: 'Would you like to provide installation instructions?',
-        default: true
-    },
-    {
         type: 'input',
         name: 'installation',
-        message: 'Provide installtion instructions:',
-        when: ({ confirmInstall }) => {
-            if (confirmInstall) {
+        message: 'Provide installation instructions: (Required)',
+        validate: installationInput => {
+            if (installationInput){
                 return true;
             }
             else {
+                console.log("Installation instructions are required.");
                 return false;
             }
         }
@@ -70,25 +59,87 @@ const questions = [
                 return false;
             }
         }
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Select a license from the list.',
+        choices: ['MIT', 'GPL v3', 'ISC']  
+    },
+    {
+        type: 'confirm',
+        name: 'confirmContrib',
+        message: 'Are you allowing other developers to contribute to this project?',
+        default: true
+    },
+    {
+        type: 'input',
+        name: 'contribute',
+        message: 'Provide Contribution guidelines here. If you leave this blank the guidelines from Contributor Covenant (https://www.contributor-covenant.org/) will be used.',
+        when: ({confirmContrib}) => {
+            if (confirmContrib) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'test',
+        message: 'Provide instructions for testing. (Required)',
+        validate: testInput => {
+            if (testInput){
+                return true;
+            }
+            else {
+                console.log("Test instuctions are required.");
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'question',
+        message: 'Provide email address for questions. (Required)',
+        validate: questionInput => {
+            if (questionInput){
+                return true;
+            }
+            else {
+                console.log("Email address required.");
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Provide GitHub account name. (Required)',
+        validate: githubInput => {
+            if (githubInput){
+                return true;
+            }
+            else {
+                console.log("Github account required.");
+                return false;
+            }
+        }
     }
 ]
 function init () {
     inquirer.prompt(questions)
     .then((answers) => {   
-        console.log("Making ReadMe",answers);
-        fs.writeFile("./ReadMe_test.md", JSON.stringify(answers), err => {
-            if (err) throw new Error(err);
+        const bcb = generateReadme(answers);
+        fs.writeFile("./ReadMe_test.md", bcb, err => {
+            // fs.writeFile("./ReadMe_test.md", JSON.stringify(answers), err => {
+                if (err) throw new Error(err);
         });
     });
 };
-// fs.writeFile('./index.html', pageHTML, err => {
-//     if (err) throw new Error(err);
-
-//     console.log('Page created! Check out index.html in this directory to see it!');
-//   });
-   
-init()
-// console.log(answers);
+// create mockdata file put in another file and export, add to testing   
+init();
 
 
 // TODO: Create a function to write README file
@@ -98,7 +149,5 @@ function writeToFile(fileName, data) {}
 // function init() {}
 
 // Function call to initialize app
-// questions();
-// console.log(questions);
-
+// init();
 
