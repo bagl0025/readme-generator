@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const data = require("./src/data.js");
 // for my personal use: standardInput
-const standardInput = require("./src/standardInput.js");
+// const standardInput = require("./src/standardInput.js");
 const generateReadme = require("./src/generateReadme.js");
 const args = process.argv.slice(2);
 
@@ -159,15 +159,16 @@ function initTest (data) {
 
 // default function
 console.log(args);
-if (args == "test") {
+if (args == "data") {
     initTest(data);
 }
 // this option not advertised
+//must uncomment var declaration at top to use
 else if (args == "mydata") {
     initTest(standardInput);
 }
 else if (args == "help") {
-    console.log("\n\nindex.js accepts 2 arguments:\nhelp - this message\ntest - use test data\nPrompts are used if no argument is provided.");
+    console.log("\n\nindex.js accepts 2 arguments:\nhelp - this message\ndata - use ./src/data.js\nPrompts are used if no argument is provided.");
 }
 else {
     init();

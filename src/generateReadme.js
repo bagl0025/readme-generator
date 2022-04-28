@@ -1,3 +1,5 @@
+const { description } = require("./data");
+
 function generateReadme(answers) {
   if (!answers.contribute) {
     answers.contribute = "Refer to [Contributor Covenant](https://www.contributor-covenant.org/) for contribution guidelines."
@@ -44,6 +46,8 @@ function generateReadme(answers) {
   ${includeLang}
 
   ${badge}
+  
+  ${description}
 
   # Table of Contents
   * [Installation](#installation)
