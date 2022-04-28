@@ -4,6 +4,7 @@ const fs = require("fs");
 const testData = require("./src/testData.js");
 const generateReadme = require("./src/generateReadme.js");
 
+// array of questions
 const questions = [
     {
         type: 'input',
@@ -60,6 +61,12 @@ const questions = [
                 return false;
             }
         }
+    },
+    {
+        type: 'checkbox',
+        name: 'language',
+        message: 'Select all languages that apply.',
+        choices: ['HTML', 'CSS', 'Bootstrap', 'Tailwind', 'JavaScript', 'jQuery', 'NodeJS']  
     },
     {
         type: 'list',
@@ -134,9 +141,7 @@ function init () {
     .then((answers) => {   
         const readMe = generateReadme(answers);
         console.log(answers);
-        fs.writeFile("./ReadMe_test.md", readMe, err => {
-                if (err) throw new Error(err);
-        });
+        writeToFile("./dist/README.md", readMe);
     });
 };
 
@@ -144,12 +149,18 @@ function init () {
 function initTest () {
         console.log(testData);
         const readMe = generateReadme(testData);
-        fs.writeFile("./ReadMe_test.md", readMe, err => {
-                if (err) throw new Error(err);
-        });
+        writeToFile("./dist/README.md", readMe);
 };
+
+// function to generate readme from user input
 // init();
+
+// function to generate readme from testdata
 initTest();
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) throw new Error(err);
+    });
+};
