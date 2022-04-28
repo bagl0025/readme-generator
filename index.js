@@ -1,6 +1,7 @@
 // required packages
 const inquirer = require("inquirer");
 const fs = require("fs");
+const testData = require("./src/testData.js");
 const generateReadme = require("./src/generateReadme.js");
 
 const questions = [
@@ -131,23 +132,24 @@ const questions = [
 function init () {
     inquirer.prompt(questions)
     .then((answers) => {   
-        const bcb = generateReadme(answers);
-        fs.writeFile("./ReadMe_test.md", bcb, err => {
-            // fs.writeFile("./ReadMe_test.md", JSON.stringify(answers), err => {
+        const readMe = generateReadme(answers);
+        console.log(answers);
+        fs.writeFile("./ReadMe_test.md", readMe, err => {
                 if (err) throw new Error(err);
         });
     });
 };
-// create mockdata file put in another file and export, add to testing   
-init();
 
+// test function using testData in testData.js
+function initTest () {
+        console.log(testData);
+        const readMe = generateReadme(testData);
+        fs.writeFile("./ReadMe_test.md", readMe, err => {
+                if (err) throw new Error(err);
+        });
+};
+// init();
+initTest();
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
-

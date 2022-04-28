@@ -1,6 +1,6 @@
 function generateReadme(answers) {
   if (!answers.contribute) {
-    answers.contribute = "Refer to Contributor Covenant - https://www.contributor-covenant.org/ for contribution guidelines."
+    answers.contribute = "Refer to Contributor Covenant (https://www.contributor-covenant.org/) for contribution guidelines."
   }
 
   //licesnse
@@ -24,16 +24,16 @@ function generateReadme(answers) {
     return `
   
   # ${answers.projectTitle}
----
+
   ${badge}
 
   # Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
-  *[License](#license)
-  *[Contribute](#contribute)
-  *[Test](#test)
-  *[Questions](#questions)
+  * [License](#license)
+  * [Contribute](#contribute)
+  * [Test](#test)
+  * [Questions](#questions)
   * [Github Profile](#github)
     
   ## Installation
@@ -41,8 +41,7 @@ function generateReadme(answers) {
   ## Usage
   ${answers.usage}
   ## License
-  ${answers.license}
-  ${licInfo}
+  This software is under the [${answers.license}](${licInfo}) license.
   ## Contribute
   ${answers.contribute}
   ## Test
