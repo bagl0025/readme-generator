@@ -27,13 +27,11 @@
     5. Install the Inquirer module: `npm install inquirer`.
   
   ## Usage
-  To execute the program type `node index` and answer the prompts that follow. To fix errors you make during the prompt process you can rerun the program and answerthe promts again or you can edit the mistakes in the README.md file. You can provide the word `data` as an argument to use the data in the `./src` folder. This is useful for testing or in cases where your answers are long.  You can modify `data.js` to fit your needs. If you forget the options just type `node index help`.
+  To execute the program type `node index` and answer the prompts that follow. To fix errors you make during the prompt process you can     rerun the program and answerthe promts again or you can edit the mistakes in the README.md file. You can provide the word `data` as an argument to use the data in the `./src` folder. This is useful for testing or in cases where your answers are long.  You can modify `data.js` to fit your needs. If you forget the options just type `node index help`.
   
-For more information on usage watch the following video:
+  For more information on usage watch the following video (You can download this video from `./src/usage_video.mov`):
 
-  <video width="600" height="480" controls>
-    <source src="./src/usage_video.mov">
-  </video>
+  https://user-images.githubusercontent.com/43792505/166321092-1858cc0c-57ac-4531-9a54-7a19c50c75de.mov
   
   This screenshot shows a summary of the information you provided for the readme.
 
