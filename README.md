@@ -21,14 +21,28 @@
   ## Installation
     1. Go to [Github section](#github) and follow link. 
     2. Under the `code` buttonselect ssh or https and copy the link. 
-    3. At the command prompt navigate to the folder youwant the repo in and type `git clone` and paste in the link you copied. 
-    4. Navigate to thefolder created by the clone process. 
+    3. At the command prompt navigate to the folder you want the repo in 
+       and type `git clone` and paste in the link you copied. 
+    4. Navigate to the folder created by the clone process. 
     5. Install the Inquirer module: `npm install inquirer`.
   
   ## Usage
-  To execute the program type `node index` and answer the prompts that follow. To fix errors you make during the prompt process you can rerun the program and answerthe promts again or you can edit the mistakes in the README.md file. You can provide the word `data` as an argument to use the data in the `./src` folder. This is useful for testing or in cases where your answers are long.  You can modify `data.js`to fit your needs. If you forget the options just type `node index help`.
+  To execute the program type `node index` and answer the prompts that follow. To fix errors you make during the prompt process you can rerun the program and answerthe promts again or you can edit the mistakes in the README.md file. You can provide the word `data` as an argument to use the data in the `./src` folder. This is useful for testing or in cases where your answers are long.  You can modify `data.js` to fit your needs. If you forget the options just type `node index help`.
   
-  SEE VIDEO
+For more information on usage watch the following video:
+
+  <video width="600" height="480" controls>
+    <source src="./src/usage_video.mov">
+  </video>
+  
+  This screenshot shows a summary of the information you provided for the readme.
+
+  <img src=".//images/readme_screenshot.png" alt="readme generator screenshot" width="600"/>
+
+  Here is a link to the README.md file produced in the video. It is located in the repo's `dist` folder.  
+
+  [README.md produced in video](./dist/README.md)
+
   ## License
   This software is under the [MIT](https://opensource.org/licenses/MIT) license.
   ## Contribute
@@ -36,7 +50,7 @@
   ## Test
   To quickly make sure the program is installed correctly you can use the `data.js` filelocated in `./src`. See the [usage](#usage) section for more information on how to do this.
   ## Questions
-  Contact author at bagley@umn.edu for questions.
+  Contact author at bagley@umn.edu for questions or to report issues.
   ## GitHub
   https://github.com/bagl0025/readme-generator
   
