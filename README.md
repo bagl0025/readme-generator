@@ -19,7 +19,7 @@
   * [Github Profile](#github)
     
   ## Installation
-    1. Under the `code` buttonselect ssh or https and copy the link. 
+    1. Under the `code` button select ssh or https and copy the link. 
     2. At the command prompt navigate to the folder you want the repo in 
        and type `git clone` and paste in the link you copied. 
     3. Navigate to the folder created by the clone process. 
