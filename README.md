@@ -19,13 +19,13 @@
   * [Github Profile](#github)
     
   ## Installation
-    1. Go to [Github section](#github) and follow link. 
-    2. Under the `code` buttonselect ssh or https and copy the link. 
-    3. At the command prompt navigate to the folder you want the repo in 
+    1. Under the `code` buttonselect ssh or https and copy the link. 
+    2. At the command prompt navigate to the folder you want the repo in 
        and type `git clone` and paste in the link you copied. 
-    4. Navigate to the folder created by the clone process. 
-    5. Install the Inquirer module: `npm install inquirer`.
-  
+    3. Navigate to the folder created by the clone process. 
+    4. Install the Inquirer module: `npm install inquirer`.
+    5. Type `node index` to run the program.
+    
   ## Usage
   To execute the program type `node index` and answer the prompts that follow. To fix errors you make during the prompt process you can     rerun the program and answerthe promts again or you can edit the mistakes in the README.md file. You can provide the word `data` as an argument to use the data in the `./src` folder. This is useful for testing or in cases where your answers are long.  You can modify `data.js` to fit your needs. If you forget the options just type `node index help`.
   
